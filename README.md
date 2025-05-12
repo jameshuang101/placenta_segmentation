@@ -1,3 +1,16 @@
+# Usage
+### Install package
+```
+pip install .
+```
+
+### Train, predict, and evaluate
+```
+psg-train --out weights.h5
+psg-predict --model weights.h5 --input vol.npy --output seg.npy
+psg-evaluate --gt_dir path/to/gt --pred_dir path/to/seg --class_id 1
+```
+
 # Motivation & Objective
 * **Clinical need**: Accurate 3D segmentation of the placenta and uterine cavity on prenatal MRI can aid in diagnosing placenta accreta spectrum (PAS) and other complications, overcoming the limitations of 2D ultrasound .
 
