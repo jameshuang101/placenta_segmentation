@@ -17,10 +17,13 @@
 * **Denoising & normalization**: 2D median filter (3×3), then intensity clipped to [p5, p99] and linearly scaled to [0,1].
 
 * **Label encoding**: Three channels—background, placenta, uterus-without-placenta—via one-hot stacking.
-
+  
+![image](https://github.com/user-attachments/assets/a97a3b99-6c4b-47c2-88a3-470d9895f22b)
 * **Blocking**: Generate overlapping 3D blocks of five consecutive slices (block stride = 1) for training (N–4 blocks per volume).
 
 # Network Architecture
+![image](https://github.com/user-attachments/assets/70e2ed57-89e6-4134-a303-40a9ec7c1e15)
+
 * **3D U-Net 3+ (modified)**:
 
   * Input: 256×256×5×1 blocks
@@ -60,6 +63,11 @@
 |          | Uterine cavity | **95.3 ± 1.4**       | 88.6 ± 3.4                 |
 | Axial    | Placenta       | **82.7 ± 5.1**       | 81.0 ± 7.2                 |
 |          | Uterine cavity | **91.8 ± 3.3**       | 87.2 ± 5.6                 |
+
+
+![image](https://github.com/user-attachments/assets/41414ec7-5f80-4074-9f13-630b21bbe1f3)
+
+![image](https://github.com/user-attachments/assets/a35c41fc-b6a8-4d67-9f4c-5703e27e6531)
 
 ### Robustness & Speed
 * **Inference time**: ≈ 30 s per full volume.
